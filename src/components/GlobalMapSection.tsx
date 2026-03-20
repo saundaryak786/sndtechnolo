@@ -32,10 +32,9 @@ export default function GlobalMapSection() {
         </motion.div>
 
         <div className="relative glass border-glass rounded-2xl p-8 lg:p-12 overflow-hidden">
-          {/* Simple dot map */}
           <div className="relative w-full" style={{ paddingBottom: "50%" }}>
-            {/* World outline hint - subtle grid */}
-            <div className="absolute inset-0 opacity-[0.04]" style={{
+            {/* Subtle grid background */}
+            <div className="absolute inset-0 opacity-[0.06]" style={{
               backgroundImage: `radial-gradient(circle, hsl(var(--cream)) 1px, transparent 1px)`,
               backgroundSize: "20px 20px",
             }} />
@@ -50,10 +49,15 @@ export default function GlobalMapSection() {
                 className="absolute group"
                 style={{ left: `${c.x}%`, top: `${c.y}%`, transform: "translate(-50%, -50%)" }}
               >
-                <div className="relative">
-                  <div className="h-3 w-3 rounded-full bg-gold animate-pulse-glow" />
-                  <div className="absolute inset-0 h-3 w-3 rounded-full bg-gold/30 animate-ping" style={{ animationDuration: "3s", animationDelay: `${i * 0.2}s` }} />
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2 py-1 rounded bg-card text-[10px] font-medium text-foreground opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border-glass">
+                <div className="relative flex items-center justify-center">
+                  {/* Outer ripple */}
+                  <div className="absolute h-8 w-8 rounded-full bg-gold/10 animate-ping" style={{ animationDuration: "2.5s", animationDelay: `${i * 0.15}s` }} />
+                  {/* Middle glow ring */}
+                  <div className="absolute h-5 w-5 rounded-full bg-gold/20 animate-pulse" style={{ animationDuration: "2s", animationDelay: `${i * 0.1}s` }} />
+                  {/* Core dot */}
+                  <div className="relative h-3.5 w-3.5 rounded-full bg-gold shadow-[0_0_12px_4px_rgba(196,167,103,0.5)]" />
+                  {/* Label */}
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-card/90 backdrop-blur-sm text-[10px] font-semibold text-foreground opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gold/20 shadow-lg">
                     {c.name}
                   </div>
                 </div>

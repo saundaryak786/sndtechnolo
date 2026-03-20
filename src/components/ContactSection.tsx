@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Rocket, Mail, Phone, MapPin } from "lucide-react";
+import { Rocket, Mail, MapPin, Globe } from "lucide-react";
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", whatsapp: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", whatsapp: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -48,16 +48,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Email Us</p>
-                  <p className="text-xs text-muted-foreground">hello@sndtech.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                  <Phone className="h-5 w-5 text-gold" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">Call Us</p>
-                  <p className="text-xs text-muted-foreground">+1 (555) 000-0000</p>
+                  <p className="text-xs text-muted-foreground">Info@sndtechnology.in</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -65,7 +56,16 @@ export default function ContactSection() {
                   <MapPin className="h-5 w-5 text-gold" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Global HQ</p>
+                  <p className="text-sm font-semibold text-foreground">Global Working HQ</p>
+                  <p className="text-xs text-muted-foreground">Pune, India</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-4">
+                <div className="h-10 w-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
+                  <Globe className="h-5 w-5 text-gold" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-foreground">Global Presence</p>
                   <p className="text-xs text-muted-foreground">Operating across 19+ countries</p>
                 </div>
               </div>
@@ -90,15 +90,9 @@ export default function ContactSection() {
                   <input name="email" type="email" value={form.email} onChange={handleChange} required placeholder="john@company.com" className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 transition-shadow" />
                 </div>
               </div>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-xs font-medium text-muted-foreground mb-1.5 block">Contact Number</label>
-                  <input name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+1 (555) 000-0000" className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 transition-shadow" />
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-muted-foreground mb-1.5 block">WhatsApp Number</label>
-                  <input name="whatsapp" type="tel" value={form.whatsapp} onChange={handleChange} placeholder="+1 (555) 000-0000" className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 transition-shadow" />
-                </div>
+              <div>
+                <label className="text-xs font-medium text-muted-foreground mb-1.5 block">WhatsApp Number</label>
+                <input name="whatsapp" type="tel" value={form.whatsapp} onChange={handleChange} placeholder="+91 98765 43210" className="w-full px-4 py-3 rounded-lg bg-secondary border border-border text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-gold/50 transition-shadow" />
               </div>
               <div>
                 <label className="text-xs font-medium text-muted-foreground mb-1.5 block">Your Message</label>

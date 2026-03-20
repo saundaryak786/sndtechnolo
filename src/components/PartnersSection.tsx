@@ -5,8 +5,10 @@ import zohoLogo from "@/assets/partners/zoho.png";
 import salesforceLogo from "@/assets/partners/salesforce.png";
 import servicenowLogo from "@/assets/partners/servicenow.png";
 import awsLogo from "@/assets/partners/aws.jpg";
+import gcpLogo from "@/assets/partners/gcp.jpg";
 
 const partners = [
+  { name: "GCP", logo: gcpLogo },
   { name: "AWS", logo: awsLogo },
   { name: "Oracle", logo: oracleLogo },
   { name: "Salesforce", logo: salesforceLogo },
@@ -14,6 +16,9 @@ const partners = [
   { name: "HubSpot", logo: hubspotLogo },
   { name: "Zoho", logo: zohoLogo },
 ];
+
+// Double the array for seamless infinite scroll
+const marqueePartners = [...partners, ...partners];
 
 export default function PartnersSection() {
   return (
@@ -32,19 +37,22 @@ export default function PartnersSection() {
           <p className="text-muted-foreground max-w-xl mx-auto">Official partner status with the world's leading technology platforms.</p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {partners.map((p, i) => (
-            <motion.div
-              key={p.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="glass border-glass rounded-xl p-6 flex items-center justify-center hover-lift aspect-[4/3] bg-white/10"
-            >
-              <img src={p.logo} alt={`${p.name} Partner`} className="max-h-14 max-w-[80%] object-contain" />
-            </motion.div>
-          ))}
+        {/* Marquee container */}
+        <div className="overflow-hidden relative">
+          {/* Fade edges */}
+          <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
+
+          <div className="flex animate-marquee gap-6">
+            {marqueePartners.map((p, i) => (
+              <div
+                key={`${p.name}-${i}`}
+                className="glass border-glass rounded-xl p-6 flex items-center justify-center hover-lift aspect-[4/3] bg-white/10 shrink-0 w-[200px]"
+              >
+                <img src={p.logo} alt={`${p.name} Partner`} className="max-h-16 max-w-[85%] object-contain" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
