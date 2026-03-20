@@ -121,12 +121,10 @@ export default function ContactSection() {
               </div>
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={submitted || loading}
                 className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-lg bg-gold text-primary-foreground font-bold text-sm hover:bg-gold-glow transition-all glow-gold disabled:opacity-60"
               >
-                {submitted ? (
-                  "Message Sent! ✓"
-                ) : (
+                {submitted ? "Message Sent! ✓" : loading ? "Sending..." : (
                   <>
                     <Rocket className="h-5 w-5" />
                     Start Your Global Scale-up
