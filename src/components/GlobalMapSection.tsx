@@ -194,22 +194,6 @@ export default function GlobalMapSection() {
             ))}
           </svg>
 
-          {/* Country labels shown on hover - HTML overlay */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="relative w-full h-full">
-              {countries.map((c, i) => (
-                <div
-                  key={`label-${c.name}`}
-                  className="absolute pointer-events-auto group"
-                  style={{ left: `${c.x}%`, top: `${c.y}%`, transform: "translate(-50%, -50%)", width: 30, height: 30 }}
-                >
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-md bg-card/95 backdrop-blur-sm text-[10px] font-semibold text-foreground opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap border border-gold/30 shadow-[0_0_15px_rgba(196,167,103,0.2)] z-20">
-                    {c.name}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </motion.div>
       </div>
     </section>
