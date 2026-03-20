@@ -13,17 +13,19 @@ const services = [
     ],
   },
   {
-    category: "Cloud & Ecosystem",
+    category: "Product & Startup Engineering",
     items: [
-      { title: "Cloud Infrastructure", desc: "Manage, optimize, and scale via GCP, AWS, Oracle & more" },
-      { title: "CRM & Automation", desc: "Salesforce, HubSpot, Zoho & ServiceNow implementations" },
+      { title: "MVP Development", desc: "Rapid prototyping to validate your idea and get to market fast" },
+      { title: "Build From Scratch", desc: "Full-cycle product engineering from architecture to deployment" },
+      { title: "Startup Consulting", desc: "IT, Growth, CXO advisory & customer engagement strategies" },
     ],
   },
   {
-    category: "Go-To-Market Engine",
+    category: "Cloud & GTM Engine",
     items: [
+      { title: "Cloud Infrastructure", desc: "Manage, optimize, and scale via GCP, AWS, Oracle & more" },
+      { title: "CRM & Automation", desc: "Salesforce, HubSpot, Zoho & ServiceNow implementations" },
       { title: "Global GTM Strategy", desc: "Transition startups into multi-national operations" },
-      { title: "Revenue Scaling", desc: "Increase transaction volume with data-driven GTM playbooks" },
     ],
   },
 ];

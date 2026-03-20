@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Plug, BarChart3, Cloud, Globe2, TrendingUp, Bot, Database } from "lucide-react";
+import { Brain, Plug, BarChart3, Cloud, Globe2, TrendingUp, Bot, Database, Rocket, Code2, Lightbulb, Users, UserCog, HeartHandshake } from "lucide-react";
 
 const scrollToContact = () => {
   document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -14,6 +14,17 @@ const serviceGroups = [
       { icon: Plug, title: "AI Integrations", desc: "Seamlessly embed AI capabilities into existing enterprise workflows, CRMs, ERPs, and data pipelines." },
       { icon: BarChart3, title: "Data Analytics & Predictions", desc: "Advanced predictive modeling, real-time analytics dashboards, and data-driven business intelligence." },
       { icon: Bot, title: "Conversational AI", desc: "Enterprise chatbots and virtual assistants powered by state-of-the-art language models." },
+    ],
+  },
+  {
+    title: "Product & Startup Engineering",
+    description: "End-to-end product development from zero to market",
+    services: [
+      { icon: Rocket, title: "MVP Development", desc: "Rapid prototyping and minimum viable product development to validate your idea and get to market fast." },
+      { icon: Code2, title: "Build From Scratch", desc: "Full-cycle product engineering — from architecture design to deployment — built custom for your vision." },
+      { icon: Lightbulb, title: "Startup Consulting in IT & Growth", desc: "Strategic technology advisory and growth hacking to help startups scale efficiently and sustainably." },
+      { icon: UserCog, title: "CXO & Leadership Advisory", desc: "Fractional CXO services providing executive-level technology and growth leadership for your startup." },
+      { icon: HeartHandshake, title: "Customer Engagement", desc: "Design and implement customer engagement strategies that drive retention, loyalty, and lifetime value." },
     ],
   },
   {
