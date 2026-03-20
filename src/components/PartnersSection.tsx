@@ -40,9 +40,9 @@ export default function PartnersSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              className="glass border-glass rounded-xl p-6 flex items-center justify-center hover-lift aspect-[4/3]"
+              className="glass border-glass rounded-xl p-6 flex items-center justify-center hover-lift aspect-[4/3] bg-white/10"
             >
-              <img src={p.logo} alt={`${p.name} Partner`} className="max-h-12 max-w-full object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity" />
+              <img src={p.logo} alt={`${p.name} Partner`} className="max-h-14 max-w-[80%] object-contain" />
             </motion.div>
           ))}
         </div>
